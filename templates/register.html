@@ -1,10 +1,23 @@
+{% extends "base.html" %}
 {%block navbar%}
-<a href="url_for('home')">home</a>
+<a href="{{url_for('home')}}">home</a>
 {%endblock%}
-
-<form>
-    <label for="fname">username:</label><br>
-    <input type="text" id="username" name="username"><br>
-    <label for="lname">password:</label><br>
-    <input type="text" id="password" name="password">
+{%block contenutoPagina%}
+<form action ="/register" method="post">
+    <label for="fname">name:</label><br>
+    <input type="text" id="fname" name="fname"><br>
+    <label for="lname">last name:</label><br>
+    <input type="text" id="lname" name="lname"><br>
+    <label for="username">username:</label><br>
+    <input type="text" id="uname" name="username"><br>
+    <label for="password">password:</label><br>
+    <input type="password" id="password" name="password"><br>
+    <label for="confirm_password">confirm password:</label><br>
+    <input type="password" id="confirm_password" name="confirm_password"><br>
+    <br>
+    {% if errore %} <p>{{ errore }}</p> {% endif%}
+    <br>
+    <input type="submit" value="Invia">
   </form>
+
+  {%endblock%}
