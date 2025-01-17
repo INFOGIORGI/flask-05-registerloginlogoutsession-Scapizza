@@ -1,1 +1,24 @@
 {% extends "base.html" %}
+{%block navbar%}
+<button><a href="{{url_for('home')}}">home</a></button>
+{%endblock%}
+
+{%block contenutoPagina%}
+<label for="username">username:</label><br>
+<input type="text" id="username" name="username"><br>
+<label for="password">password:</label><br>
+<input type="password" id="password" name="password"><br>
+{%with messages = get_flashed_messages()%}
+    {% if messages %}
+    
+        {%for errore in messages %}
+          <p>{{errore}}</p>
+        {%endfor%}
+    
+    {% endif%}
+{%endwith%}
+
+<br>
+<input type="submit" value="Invia">
+
+{%endblock%}

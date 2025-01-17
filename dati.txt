@@ -1,7 +1,0 @@
-Nome utente: pippo, Password: pippo
-Nome utente: pippo, Password: pippo
-Nome utente: pippo, Password: pippo
-Nome: dd, Cognome: ff, Nome utente: dd, Password: ff
-Nome: cc, Cognome: vv, Nome utente: cc, Password: vv
-Nome: cc, Cognome: vv, Nome utente: cc, Password: vv
-Nome: cc, Cognome: vv, Nome utente: cc, Password: vv

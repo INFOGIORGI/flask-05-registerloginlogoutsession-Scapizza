@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {%block navbar%}
-<a href="{{url_for('home')}}">home</a>
+<button><a href="{{url_for('home')}}">home</a></button>
 {%endblock%}
 {%block contenutoPagina%}
 <form action ="/register" method="post">
@@ -9,13 +9,21 @@
     <label for="lname">last name:</label><br>
     <input type="text" id="lname" name="lname"><br>
     <label for="username">username:</label><br>
-    <input type="text" id="uname" name="username"><br>
+    <input type="text" id="username" name="username"><br>
     <label for="password">password:</label><br>
     <input type="password" id="password" name="password"><br>
     <label for="confirm_password">confirm password:</label><br>
     <input type="password" id="confirm_password" name="confirm_password"><br>
     <br>
-    {% if errore %} <p>{{ errore }}</p> {% endif%}
+    {%with messages = get_flashed_messages()%}
+      {% if messages %}
+    
+        {%for errore in messages %}
+          <p>{{errore}}</p>
+        {%endfor%}
+    
+      {% endif%}
+     {%endwith%}
     <br>
     <input type="submit" value="Invia">
   </form>
